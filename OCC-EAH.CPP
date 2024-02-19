@@ -1,0 +1,24 @@
+#include<stdio.h>
+#include<conio.h>
+#include<string.h>
+void main()
+{
+int i,j,n,k;
+char a[30],s;
+clrscr();
+printf("Enter the string: ");
+gets(a);
+n=strlen(a);
+for(i=0;i<n;i++)
+{
+s=a[i];
+k=0;
+for(j=0;j<n;j++)
+{
+if(a[j]==a[i])
+k++;
+}
+printf("number of occurence of '%c'=%d\n",s,k);
+}
+getch();
+}

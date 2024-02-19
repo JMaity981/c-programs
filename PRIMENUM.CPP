@@ -1,0 +1,19 @@
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+   int n,i,j;
+   clrscr();
+   printf("\n\n");
+   for(i=1;i<100;i++)
+   {
+     for(j=2;j<i;j++)
+      {
+	if(i%j==0)
+	  break;
+	else if(i==j+1)
+	  printf("\t%d  ",i);
+      }
+   }
+   getch();
+}

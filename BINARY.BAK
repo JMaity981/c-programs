@@ -1,0 +1,32 @@
+# include<stdio.h>
+# include<conio.h>
+void main()
+{
+  int a[20],i,n,key,beg,end,mid;
+  clrscr();
+  printf("How many number you like to ues:");
+  scanf("%d",&n);
+  printf("Enter the numbers in assending order:");
+  for (i=0;i<n;i++)
+  scanf("%d",&a[i]);
+  printf("Enter the number that you want to serach:");
+  scanf("%d",&key);
+  beg=0;
+  end=n-1;
+  mid=(beg+end)/2;
+  while(a[mid]!=key&&beg<=end)
+  {
+    if(key>a[mid])
+     {
+       beg=mid+1;
+     }
+    else
+    end=mid-1;
+    mid=(beg+end)/2;
+  }
+  if(a[mid]==key)
+   printf("Found at the possition %d",mid+1);
+  else
+   printf("Not found");
+  getch();
+}

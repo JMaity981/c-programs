@@ -1,0 +1,20 @@
+#include<stdio.h>
+#include<conio.h>
+long int fact(int);
+int main()
+{
+   int n;
+   clrscr();
+   printf("Enter the number: ");
+   scanf("%d",&n);
+   printf("Factorial of that number is %ld",fact(n));
+   getch();
+return 0;
+}
+long int fact(int x)
+{
+   if(x==0||x==1)
+     return(1);
+   else
+     return(x*fact(x-1));
+}

@@ -1,0 +1,25 @@
+#include<stdio.h>
+#include<conio.h>
+int fibo();
+int main()
+{
+   clrscr();
+   printf("%d",fibo());
+   getch();
+   return 0;
+}
+int fibo()
+{
+   int a=0,b=1,c=0,n;
+   printf("Enter the value of series:");
+   scanf("%d",&n);
+   while(c<n)
+   {
+      printf("%d  ",c);
+      a=b;
+      b=c;
+      c=a+b;
+   }
+   return(c);
+}
+

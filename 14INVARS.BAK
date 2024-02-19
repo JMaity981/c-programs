@@ -1,0 +1,33 @@
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+    int a[2][2],mod,i,j;
+    float adj[2][2];
+    clrscr();
+    printf("\n\n");
+    printf("\tEnter the 2*2 order matrix eliments:");
+    for(i=0;i<2;i++)
+    {
+	for(j=0;j<2;j++)
+	scanf("\t%d",&a[i][j]);
+    }
+    mod=a[0][0]*a[1][1]-a[0][1]*a[1][0];
+    if(mod==0)
+      printf("\tThe matrix invarse is not inexistance");
+    else
+    {
+       adj[0][0]=a[1][1];
+       adj[0][1]=-a[0][1];
+       adj[1][0]=-a[1][0];
+       adj[1][1]=a[0][0];
+       printf("\tInvaese of the matrix:\n");
+       for(i=0;i<2;i++)
+       {
+	  for(j=0;j<2;j++)
+	  printf("\t%f\t",adj[i][j]/mod);
+	  printf("\t\n");
+       }
+    }
+    getch();
+}

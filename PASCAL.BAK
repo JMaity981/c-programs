@@ -1,0 +1,27 @@
+#include<stdio.h>
+#include<conio.h>
+long fact(int);
+void main()
+{
+   int i,n,c;
+   clrscr();
+   printf("\n\n");
+   printf("\tEnter the number of row:");
+   scanf("%d",&n);
+   for(i=0;i<n;i++)
+   {
+     for(c=0;c<=(n-i-2);c++)
+     printf("  ");
+	for(c=0;c<=i;c++)
+	  printf("%ld   ",fact(i)/(fact(c)*fact(i-c)));
+	  printf(" \n");
+   }
+   getch();
+}
+long int fact(int x)
+{
+if(x==0||x==1)
+return(1);
+else
+return(x*fact(x-1));
+}

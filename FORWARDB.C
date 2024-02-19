@@ -1,0 +1,111 @@
+#include<stdio.h>
+#include<conio.h>
+#include<stdlib.h>
+void backword();
+float u,h,x,a[25][25],prod,sum;
+int i,j,n;
+void forward()
+{
+printf("\n\n\t newton forward interpolation\n");
+printf("\t          ");
+printf("\n\n enter the trabular point::");
+scanf("%d",&n);
+printf("\n\n enter the interpolating point::");
+scanf("%f",&x);
+for(i=0;i<n;i++)
+{
+j=0;
+printf("\n\t x= ");
+scanf("%f",&a[i][j]);
+printf("\n\n y= ");
+scanf("%f",&a[i][j+1]);
+}
+for(j=2;j<n+1;j++)
+{
+for(i=0;i<n;i++)
+a[i][j]=a[i+1][j-1]-a[i][j-1];
+printf("\n\t DIFFERANCE TABLE");
+printf("\n          ");
+printf("\n x y dx d2x d3x d4x d5x d6x\n");
+for(i=0;i<n;i++)
+{
+for(j=0;j<(n+1)-i;j++)
+printf("%f ",a[i][j]);
+printf("\n");
+}
+h=a[1][0]-a[0][0];
+u=(x-a[0][0])/h;
+sum=(a[0][1]);
+for(i=0;i<n-1;i++)
+{
+prod=(a[0][i+2]);
+for(j=0;j<=j;j++)
+prod=prod*((u-j)/(j+1));
+sum=sum+prod;
+}
+printf("\n when x=%f then valu of fun is %f",x,sum);
+}}
+void backword()
+{
+printf("\n\n\t netwon's backwod formula\n");
+printf("\t          ");
+printf("\n\n enterthe tabular point=");
+scanf("%d",&n);
+printf("\n enter the interpolating point\n");
+scanf("%f",&x);
+for(i=0;i<n;i++)
+{
+j=0;
+printf("\n\t x= ");
+scanf("%f",&a[i][j]);
+printf("\n\t y= ");
+scanf("%f",&a[i][j+1]);
+}
+for(j=2;j<n+1;j++)
+for(i=0;i<n;i++)
+a[i][j]=(a[i][j-1]-a[i-1][j-1]);
+printf("\n\n\t differance table :\n");
+printf("x y dx d1x d2x d3x d4x \n");
+for(i=0;i<n;i++)
+{
+for(j=0;j<((n+1)-i);j++)
+printf("%f",a[i][j]);
+printf("\n");
+}
+h=(a[1][0]-a[0][0]);
+u=(x-a[n-1][0])/h;
+sum=(a[n-1][1]);
+for(i=0;i<n-1;i++)
+{
+prod=(a[n-1][i+2]);
+for(j=0;j<i;j++)
+prod=prod*((u+j)/(j+1));
+sum=sum+prod;
+}
+printf("\n\n the valu of interpolating point %f is %f",x,sum);
+}
+void main()
+{
+int ch,i1;
+clrscr();
+for(i=0;i<=5;i++)
+a[i][j]=0;
+printf("\n\n netwon's interpolation:-\n");
+printf("\n           ");
+printf("\n 1.forward interpolation\n 2.backaward interpolation\n 3.quit\n");
+printf("\n\t enter your choice::\n");
+scanf("%d",&ch);
+switch(ch)
+{
+case 1: foward();
+getch();
+break;
+case 2: backward();
+getch();
+break;
+case 3: printf("\n surcly csuit:  ");
+exit(0);
+default : printf("\n wrang choice:");
+}
+getch();
+}

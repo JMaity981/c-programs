@@ -1,0 +1,16 @@
+# include<stdio.h>
+# include<conio.h>
+# include<math.h>
+void main()
+{
+    int a,n,i,j,k,t;
+    float s=0.0;
+    clrscr();
+    printf("\n\n");
+    printf("\tEnter the value of a & n:");
+    scanf("%d%d",&a,&n);
+    for(i=1,j=1,k=2,t=1;t<=n;t++,i+=2,j+=4,k++)
+    s=s+(pow((-1),k)*(pow(a,i)/j));
+    printf("\tThe series's value is %f",s);
+    getch();
+}

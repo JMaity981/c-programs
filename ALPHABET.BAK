@@ -1,0 +1,30 @@
+#include<stdio.h>
+#include<conio.h>
+#include<string.h>
+int main()
+{
+char a[10];
+int x[10],i,j,k,n;
+clrscr();
+printf("Enter the string ");
+scanf("%c",a);
+n=strlen(a);
+for(i=0;i<n;i++)
+x[i]=a[i];
+for(i=0;i<n-1;i++)
+{
+for(k=0;k<(n-i-1);k++)
+{
+ if(x[k]>x[k+1])
+ {
+  j=x[k];
+  x[k]=x[k+1];
+  x[k+1]=j;
+ }
+ }
+ }
+for(i=0;i<n;i++)
+ printf("b=%c",x[i]);
+getch();
+return 0;
+}

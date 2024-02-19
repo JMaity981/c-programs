@@ -1,0 +1,28 @@
+#include<stdio.h>
+#include<conio.h>
+# include<math.h>
+float fxy (float,float);
+void main()
+{
+   float xin,yin,xend,x,y,h,n,k1,k2,i;
+   clrscr();
+   printf("ENTER THE INITIAL VALUE OF X AND Y AND LAST VALUE OF X\n");
+   scanf("%f%f%f",&xin,&yin,&xend);
+   printf("ENTER THE HOW MANY INTERVAL=");
+   scanf("%f",&n);
+   h=(xend-xin)/n;
+   y=yin;
+   for(x=xin,i=xin+h;x<xend;x=x+h,i=i+h)
+   {
+      k1=h*fxy(x,y);
+      k2=h*fxy(x+h,y+k1);
+      y=y+(k1+k2)/2;
+      printf("y(%f)=%f\n",i,y);
+   }
+   printf("REQUIRED VALUE OF Y=%f",y);
+   getch();
+}
+float fxy (float x,float y)
+{
+   return(-x*y);
+}

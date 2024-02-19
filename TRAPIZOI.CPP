@@ -1,0 +1,24 @@
+#include<stdio.h>
+#include<conio.h>
+#include<math.h>
+float fx(float);
+void main()
+{
+float a,b,h,n,s=0,v,i;
+printf("Enter the limit:");
+scanf("%f%f",&a,&b);
+printf("How many intervals:");
+scanf("%f",&n);
+h=(b-a)/n;
+for(i=a;i<b;i=i+h)
+{
+s=s+(fx(i)+fx(i+h));
+}
+v=(h/2)*s;
+printf("Required value=%f",v);
+getch();
+}
+float fx(float x)
+{
+return(4*x-3*x*x);
+}

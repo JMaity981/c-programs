@@ -1,0 +1,20 @@
+#include<stdio.h>
+#include<conio.h>
+#include<math.h>
+int main()
+{
+int x1,x2,y1,y2;
+float r,area,per;
+clrscr();
+printf("Enter the first point");
+scanf("%d%d",&x1,&y1);
+printf("Enter the second point");
+scanf("%d%d",&x2,&y2);
+r=sqrt((x1-x2)*(x1-x2)+(y1-y2)*(y1-y2));
+area=3.14*r*r;
+per=2*3.14*r;
+printf("Area=%d\n",area);
+printf("Peremiter=%d",per);
+getch();
+return 0;
+}
